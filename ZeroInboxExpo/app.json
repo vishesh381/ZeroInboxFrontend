@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "ZeroInboxExpo",
+    "slug": "ZeroInboxExpo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "API_URL": "https://zeroinboxbackend.onrender.com",
+      "WEB_CLIENT_ID": "7699844809-goi073prh7h99q82bhook95hq9sk0hac.apps.googleusercontent.com",
+      "ANDROID_CLIENT_ID": "7699844809-eq33dtcr7k8a34lsbhvski60arn5ilue.apps.googleusercontent.com"
+    },
+    "plugins": [
+      "expo-web-browser"
+    ]
+  }
+}

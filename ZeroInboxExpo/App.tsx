@@ -5,7 +5,7 @@ import * as WebBrowser from "expo-web-browser";
 import * as Google from "expo-auth-session/providers/google";
 import { makeRedirectUri } from "expo-auth-session";
 import axios from "axios";
-
+import * as Linking from "expo-linking";
 WebBrowser.maybeCompleteAuthSession();
 
 type Extra = {
@@ -45,7 +45,16 @@ export default function App() {
      scopes: ["openid", "email", "profile"], // <-- test with only these first
   extraParams: { prompt: "select_account" },
   });
-
+useEffect(() => {
+  WebBrowser.warmUpAsync();
+  const sub = Linking.addEventListener("url", (e) => {
+    console.log("🔔 Linking URL event:", e.url);
+  });
+  return () => {
+    sub.remove();
+    WebBrowser.coolDownAsync();
+  };
+}, []);
   useEffect(() => {
     console.log("🧭 useAuthRequest request:", request);
   }, [request]);
